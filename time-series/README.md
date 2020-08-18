@@ -20,7 +20,7 @@ As mentioned above, the Zillow dataset contains home price values for much of th
 
 Most of these columns aren't helpful for the scope of this project. Here, time, value, and zip code for the Fort Worth area are required for time series analysis. The other columns can be ignored/dropped.
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/9fABlI3"><img src="https://i.imgur.com/9fABlI3.png" title="source: imgur.com" /></a>
 
 The modified dataset for the Fort Worth area include 59 unique zip codes and 272 months of home price valuations. 
 
@@ -42,11 +42,11 @@ The preprocessing steps include:
 
 Dickey Fuller Test:
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/Q8sZKXo"><img src="https://i.imgur.com/Q8sZKXo.png" title="source: imgur.com" /></a>
 
 * Output Example:
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/fOa6hu7"><img src="https://i.imgur.com/fOa6hu7.png" title="source: imgur.com" /></a>
 
 * None of the p-values for any of the zip codes fall below the critical value, so the null hypothesis holds up and none of the data are stationary.  
 
@@ -54,7 +54,7 @@ Dickey Fuller Test:
 
 Time series decomposition splits the time series data into three different components: seasonal, trend, and residuals. This makes it easy to visualize whether or not time series data are stationary and ready to model. Having already performed the dickey-fuller test, it is assumed at this will return what is already known - that the series is not stationary. However, these visualizations will help isolate trends and seasonality in a visual format. 
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/0xAY6Wt"><img src="https://i.imgur.com/0xAY6Wt.png" title="source: imgur.com" /></a>
 
 * From the above charts, it's clear that there is an overall upward trend in home prices over time, along with what looks like yearly seasonality.
 
@@ -69,11 +69,11 @@ Time series decomposition splits the time series data into three different compo
 
 * ACF and PACF with no lags
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/r0jrybY"><img src="https://i.imgur.com/r0jrybY.png" title="source: imgur.com" /></a>
 
 * ACF and PACF with 4 lags
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/4Ng6Ulb"><img src="https://i.imgur.com/4Ng6Ulb.png" title="source: imgur.com" /></a>
 
 * Plotting the mean ACF for the Fort Worth Area shows a significant correlation to the previous time period with significant lags somewhere between 0 and 15. This is represented at q and seasonal Q within the model
 
@@ -95,7 +95,7 @@ Time series decomposition splits the time series data into three different compo
 
 * p, P, q, Q range between 0-2. d and D range between 1-2
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/m6GLztp"><img src="https://i.imgur.com/m6GLztp.png" title="source: imgur.com" /></a>
 
 * This process took 26 hours to run.
 
@@ -110,13 +110,13 @@ Time series decomposition splits the time series data into three different compo
 
 * Unfortunately, setting the hyper-parameter orders lower to cut back on computing time resulted in adverse modeling predictions
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/jCwTuU4"><img src="https://i.imgur.com/jCwTuU4.png" title="source: imgur.com" /></a>
 
 * Above are the lowest mse values calculated for Fort Worth zip codes.
 
 * Visualizing these results will help determine how far off these predictions actually are.
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/1ioIOCQ"><img src="https://i.imgur.com/1ioIOCQ.png" title="source: imgur.com" /></a>
 
 
 
@@ -127,7 +127,7 @@ Time series decomposition splits the time series data into three different compo
 
 
 
-![image.png](attachment:image.png)
+<a href="https://imgur.com/rNkK97A"><img src="https://i.imgur.com/rNkK97A.png" title="source: imgur.com" /></a>
 
 * The above df shows the 3 year home value forecast for each zip code along with their respective ROI. However, these values are known to be highly inaccurate. This is seen in the above visualizations where price predictions began at much higher values than where the actual home prices were documented.
 
